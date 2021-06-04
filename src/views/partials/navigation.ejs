@@ -1,0 +1,34 @@
+<header>
+  <div class="navigation-bar container">
+    <div class="navigation-main-buttons">
+      <button class="menu-btn">
+        <span class="menu-btn__icon"></span>
+      </button>
+      <div class="branding">
+        <a href="/" id="title-brand"><i class="fas fa-bullseye"></i> <span>BloggUP!</span></a>
+      </div>
+    </div>
+    <nav class="nav">
+      <ul class="menu-nav">
+        <% if (user) { %>
+          <li class="menu-nav__item">
+            <a href="/article/add" class="menu-nav-side__link" id="create">
+              Create</a>
+          </li>
+          <li class="menu-nav__item">
+            <a href="/auth/profile" class="menu-nav__link" id="user">
+              <%= user.username %>
+            </a>
+          </li>
+        <% } else { %>
+          <li class="menu-nav__item">
+            <a href="/auth/signin" class="menu-nav__link" id="signin">Sign In</a>
+          </li>
+          <li class="menu-nav__item">
+            <a href="/auth/signup" class="menu-nav__link" id="signup">Sign Up</a>
+          </li>
+        <% } %>
+      </ul>
+    </nav>
+  </div>
+</header>

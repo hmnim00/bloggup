@@ -1,0 +1,154 @@
+@include media-sm {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@include media-md {
+  .container {
+    max-width: 720px;
+  }
+
+  header {
+    .navigation-bar {
+      .navigation-main-buttons {
+        .menu-btn {
+          display: none;
+        }
+
+        .branding {
+          #title-brand {
+            span {
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #home,
+  #article {
+    display: grid;
+    grid-template-columns: 11rem 2fr;
+    grid-gap: 0.5rem;
+
+    .sidenav {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      width: 11rem;
+      max-width: 11rem;
+      height: 20rem;
+      position: sticky;
+      transform: translate3d(0, 0, 0);
+      background: transparent;
+
+      &__header {
+        display: none;
+      }
+    }
+
+    .home,
+    .article {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+  }
+
+  #article {
+    .article {
+      &-sidebar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .card__info {
+          max-width: 25rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-lg {
+  .container {
+    max-width: 960px;
+  }
+
+  #home {
+    grid-template-columns: 11rem 2fr 1fr;
+  }
+
+  #home {
+    .stats {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      visibility: visible;
+      height: 10rem;
+      padding: 1rem;
+      margin: 2rem 1rem;
+      border-radius: 6px;
+      background: lighten($gray-color, 30);
+      @include bottom-shadow;
+
+      &__title {
+        padding: 0 1rem 0.3rem 1rem;
+        margin-bottom: 15px;
+        border-bottom: 1px solid lighten($dark-color, 70);
+      }
+
+      table {
+        line-height: 1.8;
+      }
+    }
+  }
+
+  #article {
+    .article {
+      &-card {
+        &__body {
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+
+          &--info,
+          .button-card,
+          &--marked,
+          .comment-before,
+          .comment-form,
+          .comment-section {
+            grid-column-start: 1;
+            grid-column-end: 2;
+          }
+
+          .article-sidebar {
+            grid-column-start: 2;
+            grid-column-end: 3; 
+            height: 15rem;
+            padding: 1rem;
+            margin: 0 2rem;
+            border-radius: 6px;
+            background: lighten($gray-color, 30);
+            @include bottom-shadow;
+
+            .card__info {
+              background: transparent !important;
+              flex-direction: column;
+
+              &--data {
+                text-align: center;
+                margin-left: 0;
+                margin-top: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-xl {
+  .container {
+    max-width: 1140px;
+  }
+}

@@ -1,0 +1,24 @@
+<div class="new-entry__input-group">
+  <label for="title">Title</label>
+  <input type="text" name="title" id="title" class="new-entry__input"
+    value="<%= (typeof inputData!= 'undefined') ? inputData.title : article.title %>" autofocus>
+  <p class="new-entry__error-msg">
+    <%= (typeof errors!='undefined' && typeof errors.title!='undefined' ) ? errors.title.msg:'' %>
+  </p>
+</div>
+<div class="new-entry__input-group">
+  <label for="description">Description</label>
+  <textarea name="description" id="description" rows="4"
+    class="new-entry__input"><%= (typeof inputData != 'undefined') ? inputData.description : article.description %></textarea>
+  <p class="new-entry__error-msg">
+    <%= (typeof errors!='undefined' && typeof errors.description!='undefined' ) ? errors.description.msg:'' %>
+  </p>
+</div>
+<div class="new-entry__input-group">
+  <label for="markdown">Markdown</label>
+  <textarea name="markdown" id="markdown" rows="10"
+    class="new-entry__input"><%= (typeof inputData != 'undefined') ? inputData.markdown : article.markdown %></textarea>
+  <p class="new-entry__error-msg">
+    <%= (typeof errors!='undefined' && typeof errors.markdown!='undefined' ) ? errors.markdown.msg:'' %>
+  </p>
+</div>

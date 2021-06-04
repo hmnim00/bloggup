@@ -1,0 +1,53 @@
+<%- include ('../partials/header') %>
+
+<section id="form">
+  <%- include('../partials/sidebar'); %>
+
+  <div class="form">
+    <div class="auth-card">
+      <div class="auth-card__header">
+        <h2>Sign Up</h2>
+      </div>
+      <div class="auth-card__body">
+        <form action="/auth/signup" method="POST">
+          <div class="auth-card__input-group">
+            <label for="fullname">Full name</label>
+            <input type="text" name="fullname" id="fullname" class="auth-card__input"
+              value="<%=(typeof inputData != 'undefined') ? inputData.fullname:'' %>" autofocus>
+            <p class="auth-card__error-msg">
+              <%= (typeof errors!='undefined' && typeof errors.fullname!='undefined' ) ? errors.fullname.msg:'' %>
+            </p>
+          </div>
+          <div class="auth-card__input-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" class="auth-card__input"
+              value="<%=(typeof inputData != 'undefined') ? inputData.username:'' %>">
+            <p class="auth-card__error-msg">
+              <%= (typeof errors!='undefined' && typeof errors.username!='undefined' ) ? errors.username.msg:'' %>
+            </p>
+          </div>
+          <div class="auth-card__input-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="auth-card__input">
+            <p class="auth-card__error-msg">
+              <%=(typeof errors!='undefined' && typeof errors.password!='undefined' )? errors.password.msg:''%>
+            </p>
+          </div>
+          <div class="auth-card__input-group">
+            <label for="confirm">Confirm password</label>
+            <input type="password" name="confirm" id="confirm" class="auth-card__input">
+            <p class="auth-card__error-msg">
+              <%=(typeof errors!='undefined' && typeof errors.confirm!='undefined' )? errors.confirm.msg:''%>
+            </p>
+          </div>
+          <button type="submit" class="general-button">Sign Up</button>
+        </form>
+      </div>
+      <div class="auth-card__footer">
+        <p>Already have an account? <a href="/auth/signin">Sign in here</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include ('../partials/footer') %>

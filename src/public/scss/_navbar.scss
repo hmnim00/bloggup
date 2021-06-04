@@ -1,0 +1,143 @@
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 45px;
+  z-index: 999;
+  background: $background;
+  @include bottom-shadow;
+
+  .navigation-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    // background: $background;
+    @include transition-ease;
+
+    .navigation-main-buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .menu-btn {
+        position: relative;
+        width: 25px;
+        height: 25px;
+        margin-top: -4px;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        @include transition-ease;
+
+        &__icon {
+          position: absolute;
+          height: 3px;
+          width: 22px;
+          left: 0;
+          background: $gray-color;
+          @include transition-ease;
+
+          &::before {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 3px;
+            left: 0;
+            transform: translateY(-7px);
+            background: $gray-color;
+            @include transition-ease;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 3px;
+            left: 0;
+            transform: translateY(7px);
+            background: $gray-color;
+            @include transition-ease;
+          }
+
+          &.open {
+            background: transparent;
+
+            &::before {
+              transform: rotate(45deg);
+            }
+
+            &::after {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+
+        &:hover > .menu-btn__icon {
+          &.open {
+            background: transparent;
+          }
+        }
+
+        &:focus {
+          border: none;
+          outline: none;
+        }
+      }
+
+      .branding {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        font-size: 1.3rem;
+        margin-left: 1rem;
+
+        #title-brand {
+          color: $gray-color;
+          @include transition-ease;
+
+          .fa-bullseye {
+            color: $red-color;
+            @include transition-ease;
+          }
+
+          span {
+            visibility: hidden;
+          }
+
+          &:hover {
+            color: $light-color;
+          }
+        }
+      }
+    }
+
+    .nav {
+      grid-column-start: 4;
+      grid-column-end: 5;
+
+      .menu-nav {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__item {
+          a {
+            color: $gray-color;
+            @include transition-ease;
+
+            &:hover {
+              color: $red-color;
+            }
+          }
+        }
+
+        &__item:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

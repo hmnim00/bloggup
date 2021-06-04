@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin: 0 auto;
+}
+
+section {
+  padding: 4rem 0;
+  min-height: 85vh;
+  height: 100%;
+}
+
+.general-button {
+  padding: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: $blue-color;
+  color: $light-color;
+  @include transition-ease;
+
+  &:hover {
+    background: $background;
+  }
+}

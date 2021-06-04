@@ -1,0 +1,105 @@
+#create {
+  .create {
+    width: 100%;
+    
+    .new-entry {
+      max-width: 43rem;
+      background: $light-color;
+      border-radius: 6px;
+      margin: 0 auto;
+      @include bottom-shadow;
+
+      &__header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $red-color;
+        margin-bottom: 8px;
+        border-radius: 6px 6px 0 0;
+        height: 50px;
+        border-bottom: 1px solid lighten($dark-color, 70);
+        h2 {
+          font-weight: 600;
+          color: $light-color;
+        }
+      }
+
+      &__form {
+        background: $light-color;
+        border-radius: 0 0 6px 6px;
+        padding: 15px 10px;
+
+        &--buttons {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 1rem;
+          
+          button {
+            font-size: 1rem;
+            padding: 10px 15px;
+            width: 6rem;
+            @include transition-ease;
+          }
+
+          .btn-cancel {
+            background: $red-color;
+            font-size: 1rem;
+            padding: 10px 15px;
+            width: 6rem;
+            text-align: center;
+            @include transition-ease;
+
+            &:hover {
+              background: darken($red-color, 15);
+            }
+          }
+        }
+
+      }
+
+      &__input-group {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat((2, 1fr));
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid lighten($dark-color, 75);
+
+        label {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          width: 100%;
+          font-size: 1rem;
+          color: lighten($dark-color, 20);
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          grid-column-start: 1;
+          grid-column-end: 3;
+          border: 1px solid $altern-color;
+          border-radius: 5px;
+          font-size: 1rem;
+          font-family: "Poppins", sans-serif;
+          color: lighten($dark-color, 20);
+          padding: 7px;
+
+          &:focus {
+            outline: $red-color;
+            border: 1px solid $red-color;
+          }
+        }
+      }
+
+      &__error-msg {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        color: $red-color;
+        font-size: 13px;
+      }
+    }
+  }
+}
