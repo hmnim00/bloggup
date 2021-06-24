@@ -1,9 +1,12 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-mongoose.connect('mongodb://localhost/bloggup', {
-  useCreateIndex: true,
-  useFindAndModify: true,
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: true
-}).then(db => console.log(`DB Connected`)).catch(err => console.log(err));
+mongoose
+  .connect(`${process.env.MONGODB_URL}`, {
+    useCreateIndex: true,
+    useFindAndModify: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: true,
+  })
+  .then(() => console.log(`DB Connected`))
+  .catch((err) => console.log(err));

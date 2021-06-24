@@ -1,70 +1,69 @@
 <%- include ('../partials/header') %>
 
-  <section id="home">
+<section id="home">
   <%- include('../partials/sidebar'); %>
 
-    <div class="home">
+  <div class="home">
 
-      <div class="home__title">
-        <h1>Articles made by you</h1>
-      </div>
+    <div class="home__title">
+      <h1>Articles made by you</h1>
+    </div>
 
-      <div class="home__no-articles">
-        <% if (articles.length==0 ) { %>
-          <h2>You haven't made any articles</h2>
-          <i class="fas fa-edit"></i>
-          <p>Go and create a new one <a href="/article/add">here</a>.</p>
-        <% } %>
-      </div>
+    <div class="home__no-articles">
+      <% if (articles.length==0 ) { %>
+      <h2>You haven't made any articles</h2>
+      <i class="fas fa-edit"></i>
+      <p>Go and create a new one <a href="/article/add">here</a>.</p>
+      <% } %>
+    </div>
 
-      <% articles.forEach (article=> { %>
-        <div class="article-card">
-          <div class="article-card__body">
-            <div class="article-card__body--left">
-              <p class="totalComments">0</p><i class="fas fa-comment"></i>
-            </div>
-            <div class="article-card__body--right">
-              <h4> <a href="/article/<%= article.slug %>">
-                  <%= article.title %>
-                </a> </h4>
-              <p class="description">
-                <%= article.description %>
-              </p>
-              <div class="article-card__body-bottom">
-                <span class="btm-date">
-                  <%= article.created.toLocaleDateString() %>
-                </span>
-              </div>
-            </div>
-            <div class="article-card__body--button">
-              <a href="/article/<%= article.slug %>">
-                more...
-              </a>
-            </div>
+    <% articles.forEach (article=> { %>
+    <div class="article-card">
+      <div class="article-card__body">
+        <div class="article-card__body--left">
+        </div>
+        <div class="article-card__body--right">
+          <h4> <a href="/article/<%= article.slug %>">
+              <%= article.title %>
+            </a> </h4>
+          <p class="description">
+            <%= article.description %>
+          </p>
+          <div class="article-card__body-bottom">
+            <span class="btm-date">
+              <%= article.created.toLocaleDateString() %>
+            </span>
           </div>
         </div>
-      <% }); %>
+        <div class="article-card__body--button">
+          <a href="/article/<%= article.slug %>">
+            more...
+          </a>
+        </div>
+      </div>
     </div>
+    <% }); %>
+  </div>
 
-    <div class="stats">
+  <div class="stats">
 
-      <h3 class="stats__title">Stats</h3>
+    <h3 class="stats__title">Stats</h3>
 
-      <table>
-        <tr>
-          <td>Your posts</td>
-          <td>
-            <%= totalArticles %>
-          </td>
-        </tr>
-        <tr>
-          <td>Your comments</td>
-          <td>
-            <%= totalComments %>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </section>
+    <table>
+      <tr>
+        <td>Your posts</td>
+        <td>
+          <%= totalArticles %>
+        </td>
+      </tr>
+      <tr>
+        <td>Your comments</td>
+        <td>
+          <%= totalComments %>
+        </td>
+      </tr>
+    </table>
+  </div>
+</section>
 
-  <%- include ('../partials/footer') %>
+<%- include ('../partials/footer') %>
