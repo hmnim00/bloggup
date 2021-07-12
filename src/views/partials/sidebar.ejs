@@ -4,38 +4,38 @@
   </div>
   <ul class="sidenav__menu">
     <% if (user) { %>
-      <li class="sidenav__menu--item">
-        <a href="/" class="sidenav__menu--link" id="user">
-          <i class="fas fa-bullseye"></i>
-          Home
-        </a>
-      </li>
-      <li class="sidenav__menu--item">
-        <a href="/auth/profile" class="sidenav__menu--link" id="user">
-          <i class="fas fa-user"></i>
-          <%= user.username %>
-        </a>
-      </li>
-      <li class="sidenav__menu--item">
-        <a href="/article/add" class="sidenav__menu--link" id="create">
-          <i class="fas fa-plus-circle"></i> Create</a>
-      </li>
-      <li class="sidenav__menu--item">
-        <a href="/auth/signout" class="sidenav__menu--link" id="signout">
-          <i class="fas fa-sign-out-alt"></i> Sign Out</a>
-      </li>
+    <li class="sidenav__menu--item">
+      <a href="/" class="sidenav__menu--link" id="user">
+        <i class="fas fa-bullseye"></i>
+        Inicio
+      </a>
+    </li>
+    <li class="sidenav__menu--item">
+      <a href="/auth/profile" class="sidenav__menu--link" id="user">
+        <i class="fas fa-user"></i>
+        <%= user.username %>
+      </a>
+    </li>
+    <li class="sidenav__menu--item">
+      <a href="/article/add" class="sidenav__menu--link" id="create">
+        <i class="fas fa-plus-circle"></i> Nuevo</a>
+    </li>
+    <li class="sidenav__menu--item">
+      <a href="/auth/signout" class="sidenav__menu--link" id="signout">
+        <i class="fas fa-sign-out-alt"></i> Salir</a>
+    </li>
     <% } else { %>
-      <li class="sidenav__menu--item">
-        <a href="/auth/signin" class="sidenav__menu--link" id="signin">
-          <i class="fas fa-sign-in-alt"></i></i> Sign In</a>
-      </li>
-      <li class="sidenav__menu--item">
-        <a href="/auth/signup" class="sidenav__menu--link" id="signup">
-          <i class="fas fa-user"></i></i> Sign Up</a>
-      </li>
+    <li class="sidenav__menu--item">
+      <a href="/auth/signin" class="sidenav__menu--link" id="signin">
+        <i class="fas fa-sign-in-alt"></i></i> Acceder</a>
+    </li>
+    <li class="sidenav__menu--item">
+      <a href="/auth/signup" class="sidenav__menu--link" id="signup">
+        <i class="fas fa-user"></i></i> Registrarse</a>
+    </li>
     <% } %>
   </ul>
   <div class="sidenav__footer">
-    <p>&copy; 2021 HMNIM</p>
+    <p>&copy; 2021 MF</p>
   </div>
 </div>

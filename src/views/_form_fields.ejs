@@ -1,5 +1,5 @@
 <div class="new-entry__input-group">
-  <label for="title">Title</label>
+  <label for="title">Título</label>
   <input type="text" name="title" id="title" class="new-entry__input"
     value="<%= (typeof inputData!= 'undefined') ? inputData.title : article.title %>" autofocus>
   <p class="new-entry__error-msg">
@@ -7,7 +7,7 @@
   </p>
 </div>
 <div class="new-entry__input-group">
-  <label for="description">Description</label>
+  <label for="description">Descripción</label>
   <textarea name="description" id="description" rows="4"
     class="new-entry__input"><%= (typeof inputData != 'undefined') ? inputData.description : article.description %></textarea>
   <p class="new-entry__error-msg">
@@ -15,7 +15,7 @@
   </p>
 </div>
 <div class="new-entry__input-group">
-  <label for="markdown">Markdown</label>
+  <label for="markdown">Contenido (Markdown)</label>
   <textarea name="markdown" id="markdown" rows="10"
     class="new-entry__input"><%= (typeof inputData != 'undefined') ? inputData.markdown : article.markdown %></textarea>
   <p class="new-entry__error-msg">

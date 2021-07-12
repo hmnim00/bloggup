@@ -12,31 +12,31 @@
       </div>
       <div class="article-card__body">
         <div class="article-card__body--info">
-          <p> Published on <%= article.created.toLocaleDateString() %>
+          <p> Publicado en <%= article.created.toLocaleDateString() %>
           </p>
-          <p>Written by: <%- article.user.username %>
+          <p>Escrito por: <%- article.user.username %>
           </p>
         </div>
-  
+
         <% if (user !=null && user.id==article.user._id) { %>
-          <div class="button-card">
-            <a href="/article/edit/<%= article._id %>" class="general-button">
-              <i class="fas fa-edit"></i>
-              <span>Edit</span>
-            </a>
-            <form action="/article/<%= article._id %>?_method=DELETE" method="post">
-              <button type="submit" class="general-button">
-                <i class="fas fa-trash-alt"></i>
-                <span>Delete</span>
-              </button>
-            </form>
-          </div>
+        <div class="button-card">
+          <a href="/article/edit/<%= article._id %>" class="general-button">
+            <i class="fas fa-edit"></i>
+            <span>Editar</span>
+          </a>
+          <form action="/article/<%= article._id %>?_method=DELETE" method="post">
+            <button type="submit" class="general-button">
+              <i class="fas fa-trash-alt"></i>
+              <span>Eliminar</span>
+            </button>
+          </form>
+        </div>
         <% } %>
-  
+
         <div class="article-card__body--marked">
           <%- article.sanitizedHTML %>
         </div>
-  
+
         <div class="article-sidebar">
           <div class="card__info">
             <img src="/public/img/no-profile-img.png" alt="profile">
@@ -44,68 +44,68 @@
               <p class="p-username">
                 <%- article.user.username %>
               </p>
-              <p class="p-member">Member since <%- article.user.joined.toLocaleDateString() %> </p>
+              <p class="p-member">Miembro desde <%- article.user.joined.toLocaleDateString() %> </p>
             </div>
           </div>
         </div>
-  
+
         <div class="comment-before">
           <h3 class="__title">
             <% if (totalComments == 0) { %>
-              No comments yet
+            No hay comentarios
             <% } else if(totalComments == 1) { %>
-              <%= totalComments %> comment
+            <%= totalComments %> comment
             <% } else { %>
-              <%= totalComments %> comments
+            <%= totalComments %> comments
             <% } %>
           </h3>
         </div>
         <!-- comments -->
         <div class="comment-section">
           <% comments.forEach (comment=> { %>
-            <div class="comment-card">
-              <div class="comment-card__body">
-                <div class="comment-card__body--message">
-                  <p>
-                    <%= comment.comment %>
-                  </p>
-                </div>
-                <div class="comment-card__body--info">
-                  <p class="comment-username">
-                    <%= comment.user.username %>
-                  </p>
-                  <p class="timestamp">
-                    <%= timeago.format(comment.created) %>
-                  </p>
-  
-                  <% if (user !=null && user.id==comment.user._id) { %>
-                    <form action="/comment/<%= comment._id %>?_method=DELETE" method="post" class="comment-functions">
-                      <button type="submit" class="general-button"><span>Delete</span> <i
-                          class="fas fa-trash-alt"></i></button>
-                    </form>
-                  <% } %>
-                </div>
+          <div class="comment-card">
+            <div class="comment-card__body">
+              <div class="comment-card__body--message">
+                <p>
+                  <%= comment.comment %>
+                </p>
+              </div>
+              <div class="comment-card__body--info">
+                <p class="comment-username">
+                  <%= comment.user.username %>
+                </p>
+                <p class="timestamp">
+                  <%= timeago.format(comment.created) %>
+                </p>
+
+                <% if (user !=null && user.id==comment.user._id) { %>
+                <form action="/comment/<%= comment._id %>?_method=DELETE" method="post" class="comment-functions">
+                  <button type="submit" class="general-button"><span>Eliminar</span> <i
+                      class="fas fa-trash-alt"></i></button>
+                </form>
+                <% } %>
               </div>
             </div>
+          </div>
           <% }); %>
         </div>
-  
+
         <div class="comment-form">
           <% if (user) { %>
-            <form action="/comment/<%= article._id %>/add" method="post">
-              <label for="comment">New comment</label>
-              <textarea name="comment" id="comment" rows="3" required></textarea>
-              <button type="submit" class="general-button">Add comment</button>
-            </form>
+          <form action="/comment/<%= article._id %>/add" method="post">
+            <label for="comment">Nuevo comentario</label>
+            <textarea name="comment" id="comment" rows="3" required></textarea>
+            <button type="submit" class="general-button">Enviar</button>
+          </form>
           <% } else {%>
-            <p><a href="/auth/signup">Sign up</a> or <a href="/auth/signin">sign in</a> to add a comment</p>
+          <p><a href="/auth/signup">Regístrate</a> o <a href="/auth/signin">accede</a> para comentar</p>
           <% } %>
         </div>
       </div>
     </div>
   </div>
-  
+
 </section>
 
 
-  <%- include('partials/footer') %>
+<%- include('partials/footer') %>

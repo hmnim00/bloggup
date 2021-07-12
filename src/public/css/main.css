@@ -38,8 +38,7 @@ p {
 
 section {
   padding: 4rem 0;
-  min-height: 85vh;
-  height: 100%;
+  min-height: calc(100vh - 120px);
 }
 
 .general-button {
@@ -725,10 +724,43 @@ header .navigation-bar .nav .menu-nav__item:not(:last-child) {
   grid-template-columns: 1fr;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  height: 120px;
 }
 .footer__top {
-  padding: 2rem 0;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer__top p {
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+}
+.footer__top .tech {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+.footer__top .tech__item {
+  height: 1.7rem;
+  width: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer__top .tech__item .iconify {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer__bottom p {
+  font-size: 13px;
 }
 
 @media (min-width: 576px) {

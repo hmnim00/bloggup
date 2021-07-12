@@ -1,23 +1,23 @@
 <%- include ('partials/header') %>
 
-  <section id="create">
-    <%- include('partials/sidebar'); %>
-    <div class="create">
-      <div class="new-entry">
-        <div class="new-entry__header">
-          <h2>Edit Article</h2>
-        </div>
-        <div class="new-entry__form">
-          <form action="/article/update/<%= article._id %>?_method=PUT" method="post">
-            <%- include('_form_fields') %>
-            <div class="new-entry__form--buttons">
-              <button type="submit" class="general-button">Update</button>
-              <a href="/" class="general-button btn-cancel">Cancel</a>
-            </div>
-          </form>
-        </div>
+<section id="create">
+  <%- include('partials/sidebar'); %>
+  <div class="create">
+    <div class="new-entry">
+      <div class="new-entry__header">
+        <h2>Editar Artículo</h2>
+      </div>
+      <div class="new-entry__form">
+        <form action="/article/update/<%= article._id %>?_method=PUT" method="post">
+          <%- include('_form_fields') %>
+          <div class="new-entry__form--buttons">
+            <button type="submit" class="general-button">Actualizar</button>
+            <a href="/" class="general-button btn-cancel">Cancelar</a>
+          </div>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 <%- include ('partials/footer') %>

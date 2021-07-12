@@ -7,66 +7,66 @@
   <div class="home">
 
     <div class="home__title">
-      <h1>Articles</h1>
+      <h1>Artículos</h1>
     </div>
 
     <div class="home__no-articles">
       <% if (articles.length==0 ) { %>
-        <h2>No articles found</h2>
-        <i class="fas fa-edit"></i>
-        <% if (user) { %>
-          <p>Go and create a new one <a href="/article/add">here</a>.</p>
-        <% } else { %>
-        <p><a href="/auth/signin">Sign in</a> or <a href="/auth/signup">sign up</a> to create a new article.</p>
-        <% } %>
+      <h2>No se ecnontraron artículos</h2>
+      <i class="fas fa-edit"></i>
+      <% if (user) { %>
+      <p>Crea un nuevo artículo <a href="/article/add">aquí</a>.</p>
+      <% } else { %>
+      <p><a href="/auth/signin">Accede</a> o <a href="/auth/signup">regístrate</a> para crear un nuevo artículo.</p>
+      <% } %>
       <% } %>
     </div>
 
     <% articles.forEach (article=> { %>
-      <div class="article-card">
-        <div class="article-card__body">
-          <div class="article-card__body--left">
-          </div>
-          <div class="article-card__body--right">
-            <h4> 
-              <a href="/article/<%= article.slug %>"><%= article.title %></a>
-            </h4>
-            <p class="description">
-              <%= article.description %>
-            </p>
-            <div class="article-card__body-bottom">
-              <span class="btm-date">
-                <%= article.created.toLocaleDateString() %>
-              </span>
-              <span class="btm-username">
-                <%= article.user.username %>
-              </span>
-            </div>
-          </div>
-          <div class="article-card__body--button">
-            <a href="/article/<%= article.slug %>">
-              more...
-            </a>
+    <div class="article-card">
+      <div class="article-card__body">
+        <div class="article-card__body--left">
+        </div>
+        <div class="article-card__body--right">
+          <h4>
+            <a href="/article/<%= article.slug %>"><%= article.title %></a>
+          </h4>
+          <p class="description">
+            <%= article.description %>
+          </p>
+          <div class="article-card__body-bottom">
+            <span class="btm-date">
+              <%= article.created.toLocaleDateString() %>
+            </span>
+            <span class="btm-username">
+              <%= article.user.username %>
+            </span>
           </div>
         </div>
+        <div class="article-card__body--button">
+          <a href="/article/<%= article.slug %>">
+            más...
+          </a>
+        </div>
       </div>
+    </div>
     <% }); %>
 
   </div>
 
   <div class="stats">
 
-    <h3 class="stats__title">Stats</h3>
+    <h3 class="stats__title">Estadísticas</h3>
 
     <table>
       <tr>
-        <td>Total articles</td>
+        <td>Artículos totales</td>
         <td>
           <%= totalArticles %>
         </td>
       </tr>
       <tr>
-        <td>Users registered</td>
+        <td>Usuarios registrados</td>
         <td>
           <%= totalUsers %>
         </td>

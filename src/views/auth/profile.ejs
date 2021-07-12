@@ -6,14 +6,14 @@
   <div class="home">
 
     <div class="home__title">
-      <h1>Articles made by you</h1>
+      <h1>Mis artículos</h1>
     </div>
 
     <div class="home__no-articles">
       <% if (articles.length==0 ) { %>
-      <h2>You haven't made any articles</h2>
+      <h2>No has creado artículos</h2>
       <i class="fas fa-edit"></i>
-      <p>Go and create a new one <a href="/article/add">here</a>.</p>
+      <p>Crea uno <a href="/article/add">aquí</a>.</p>
       <% } %>
     </div>
 
@@ -37,7 +37,7 @@
         </div>
         <div class="article-card__body--button">
           <a href="/article/<%= article.slug %>">
-            more...
+            más...
           </a>
         </div>
       </div>
@@ -47,17 +47,17 @@
 
   <div class="stats">
 
-    <h3 class="stats__title">Stats</h3>
+    <h3 class="stats__title">Estadísticas</h3>
 
     <table>
       <tr>
-        <td>Your posts</td>
+        <td>Tus publicaciones</td>
         <td>
           <%= totalArticles %>
         </td>
       </tr>
       <tr>
-        <td>Your comments</td>
+        <td>Tus comentarios</td>
         <td>
           <%= totalComments %>
         </td>
