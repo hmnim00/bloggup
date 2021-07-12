@@ -368,6 +368,9 @@ header .navigation-bar .nav .menu-nav__item:not(:last-child) {
   width: auto;
   height: 300px;
 }
+#article .article-card__body--marked a {
+  color: #013379;
+}
 #article .article-card__body .button-card {
   display: flex;
   flex-direction: column wrap;
