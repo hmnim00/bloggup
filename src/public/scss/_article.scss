@@ -27,13 +27,20 @@
           line-height: 1.5;
           text-align: justify;
 
-          ul {
-            margin-left: 1rem;
+          ul,
+          ol {
+            margin-left: 1.5rem;
           }
 
           hr {
             margin: 1rem 0;
           }
+
+          img {
+            width: auto;
+            height: 300px;
+          }
+
         }
 
         .button-card {

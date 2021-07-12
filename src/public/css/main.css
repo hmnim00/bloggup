@@ -357,11 +357,16 @@ header .navigation-bar .nav .menu-nav__item:not(:last-child) {
   line-height: 1.5;
   text-align: justify;
 }
-#article .article-card__body--marked ul {
-  margin-left: 1rem;
+#article .article-card__body--marked ul,
+#article .article-card__body--marked ol {
+  margin-left: 1.5rem;
 }
 #article .article-card__body--marked hr {
   margin: 1rem 0;
+}
+#article .article-card__body--marked img {
+  width: auto;
+  height: 300px;
 }
 #article .article-card__body .button-card {
   display: flex;
