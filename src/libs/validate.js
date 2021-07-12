@@ -8,7 +8,7 @@ validations.validateSignup = [
   check("fullname")
     .trim()
     .notEmpty()
-    .withMessage("Full name is required")
+    .withMessage("Este campo es requerido")
     .matches(/^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$/)
     .withMessage("Solo caracteres con espacio"),
   check("username")
