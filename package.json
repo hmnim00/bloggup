@@ -1,14 +1,14 @@
 {
   "name": "blogup",
   "version": "1.0.0",
-  "description": "",
+  "description": "Proeycto blog, express, mongodb, ejs",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Manuel Flores",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
